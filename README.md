@@ -3,7 +3,7 @@
 
 1. [Instalación de Homebrew](#schema1)
 2. [Instalación de Git con Homebrew](schema2)
-3. [Usar GITHUB](schema3)
+3. [Configurar GITHUB](schema3)
 
 <hr>
 <a name='schema1'></a>
@@ -78,7 +78,7 @@
 <hr>
 <a name='schema3'></a>
 
-## 3. Usar GITHUB
+## 3. Configurar GITHUB
 
 1. Crear una Cuenta en GitHub
     - Visita GitHub y haz clic en "Sign up".
