@@ -10,6 +10,7 @@
 7. [Aplicaciones](schema7)
 8. [Instalación de Python](#schema8)
 9. [Crear y Usar Entornos Virtuales](#schema9)
+10. [Instalar Jupyter Notebook en tu entorno virtual](#schema10)
 
 
 <hr>
@@ -365,4 +366,36 @@ Cuando termines de trabajar en tu proyecto, desactiva el entorno virtual ejecuta
 
 ```sh
 deactivate
-````
+```
+
+<hr>
+<a name='schema10'></a>
+
+## 10. Instalar Jupyter Notebook en tu entorno virtual
+
+1. Activar tu Entorno Virtual
+Primero, asegúrate de que tu entorno virtual esté activado. Si no lo está, actívalo siguiendo estos pasos:
+
+    ```sh
+    source nombre_del_entorno/bin/activate
+    ```
+
+2. Instalar Jupyter Notebook
+Una vez que tu entorno virtual esté activado, instala Jupyter Notebook usando pip:
+
+    ```sh
+    pip install jupyter
+    ```
+
+    La razón por la cual se usa pip en lugar de pip3 es que, una vez que estás dentro de un entorno virtual, el comando pip se refiere automáticamente al pip correspondiente a la versión de Python usada para crear el entorno virtual
+
+3. Verificar la instalación de Jupyter Notebook:
+
+    ```sh
+    jupyter --version
+    ```
+4. Iniciar Jupyter Notebook:
+
+    ```sh
+    jupyter notebook
+    ```
