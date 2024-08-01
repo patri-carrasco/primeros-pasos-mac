@@ -6,6 +6,8 @@
 3. [Configurar GITHUB](schema3)
 4. [Instalar Visual Studio Code](#schema4)
 5. [Añadir el comando code manualmente al PATH](#schema5)
+6. [Extensiones para Visual Studio Code](schema6)
+7. [Aplicaciones](schema7)
 
 
 <hr>
@@ -260,7 +262,35 @@
             - Deberías ver la versión de Visual Studio Code, indicando que el comando code está funcionando correctamente.
 
 
+<hr>
+<a name='schema6'></a>
 
+## 6. Extensiones para Visual Studio Code
+
+- Prettier - Code formatter
+- Scala (Metals)
+- HashiCorp Terraform
+- Rainbow CSV
+- Python
+- Python Debugger
+- Docker
+
+
+
+<hr>
+<a name='schema7'></a>
+
+## 7. Aplicaciones 
+
+- Descomprimidor: [The Unarchiver](https://apps.apple.com/es/app/the-unarchiver/id425424353?mt=12)
+
+- Capturas de pantallas: [xnip](https://apps.apple.com/es/app/xnip-screenshot-annotation/id1221250572?mt=12)
+
+- Mover y redimensionar ventanas: [Rectagle](https://rectangleapp.com/)
+
+- Iniciar aplicaciones y buscar archivos: [Alfred](https://www.alfredapp.com/)
+
+- Control de rato Logitech: [MX Master](https://www.logitech.com/es-es/software/logi-options-plus.html)
 
 
 
