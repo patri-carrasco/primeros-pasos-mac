@@ -8,6 +8,8 @@
 5. [Añadir el comando code manualmente al PATH](#schema5)
 6. [Extensiones para Visual Studio Code](schema6)
 7. [Aplicaciones](schema7)
+8. [Instalación de Python](#schema8)
+9. [Crear y Usar Entornos Virtuales](#schema9)
 
 
 <hr>
@@ -293,5 +295,74 @@
 - Control de rato Logitech: [MX Master](https://www.logitech.com/es-es/software/logi-options-plus.html)
 
 
+<hr>
+<a name='schema8'></a>
 
+## 8. Instalación de Python
 
+1. Instalar Python con Homebrew
+
+    - Abre la Terminal y ejecuta:
+
+        ```sh
+        brew install python
+        ```
+        Esto instala la última versión de Python 3, junto con pip3.
+
+        El comando `brew` install python instala la versión más reciente de Python disponible a través de Homebrew, que generalmente es `Python 3`. Sin embargo, debido a la coexistencia histórica de `Python 2` y `Python 3`, el comando python puede referirse a `Python 2` en algunos sistemas. Para evitar cualquier ambigüedad, es mejor usar python3 y pip3 cuando trabajes con Python 3.
+2. Verificar la Instalación de Python
+
+    Para asegurarte de que la instalación se realizó correctamente y estás utilizando la versión correcta de Python, ejecuta:
+
+    ```sh
+    python3 --version
+    ```
+3. Verificar la Instalación de pip3
+
+    También verifica que pip3 esté instalado:
+
+    ```sh
+    pip3 --version
+    ```
+
+<hr>
+<a name='schema9'></a>
+
+## 9.Crear y Usar Entornos Virtuales
+Después de instalar `Python 3` y `pip3`, puedes proceder a crear y usar entornos virtuales para tus proyectos. 
+
+### Crear un Entorno Virtual
+1. Navega al directorio de tu proyecto:
+
+2. Crea un entorno virtual usando `venv`, que **viene integrado con Python 3**:
+
+    ```sh
+    python3 -m venv nombre_del_entorno
+    ```
+### Activar el Entorno Virtual
+Para activar el entorno virtual, ejecuta:
+
+```sh
+source nombre_del_entorno/bin/activate
+```
+
+Cuando el entorno virtual esté activado, verás el nombre del entorno en tu línea de comandos.
+
+### Instalar Dependencias
+Una vez activado el entorno virtual, instala las dependencias necesarias para tu proyecto:
+
+```sh
+pip install nombre_del_paquete
+```
+### Guardar Dependencias
+Para guardar las dependencias en un archivo `requirements.txt`:
+
+```sh
+pip freeze > requirements.txt
+```
+### Desactivar el Entorno Virtual
+Cuando termines de trabajar en tu proyecto, desactiva el entorno virtual ejecutando:
+
+```sh
+deactivate
+````
