@@ -12,7 +12,7 @@
 9. [Crear y Usar Entornos Virtuales](#schema9)
 10. [Instalar Jupyter Notebook en tu entorno virtual](#schema10)
 11. [Instalar AWS CLI usando Homebrew](#schema11)
-
+12. [Instalar Terraform usando Homebrew](#schema12)
 
 <hr>
 <a name='schema0'></a>
@@ -452,3 +452,20 @@ brew upgrade awscli
 - **Permisos insuficientes:** Si encuentras problemas de permisos durante la instalación de Homebrew o AWS CLI, puedes necesitar agregar sudo antes de los comandos para ejecutarlos como administrador.
 
 - **Problemas de red:** Si la instalación falla debido a problemas de red, asegúrate de que tu conexión a internet esté funcionando correctamente y vuelve a intentarlo.
+
+<hr>
+<a name='schema11'></a>
+
+## 12. Instalar Terraform usando Homebrew
+Ejecuta el siguiente comando en la Terminal:
+
+```bash
+brew tap hashicorp/tap
+brew install hashicorp/tap/terraform
+```
+2. Verificar la instalación
+Para asegurarte de que Terraform se haya instalado correctamente, verifica la versión instalada:
+
+```bash
+terraform -v
+```
