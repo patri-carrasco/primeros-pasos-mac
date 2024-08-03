@@ -11,6 +11,7 @@
 8. [Instalación de Python](#schema8)
 9. [Crear y Usar Entornos Virtuales](#schema9)
 10. [Instalar Jupyter Notebook en tu entorno virtual](#schema10)
+11. [Instalar AWS CLI usando Homebrew](#schema11)
 
 
 <hr>
@@ -399,3 +400,55 @@ Una vez que tu entorno virtual esté activado, instala Jupyter Notebook usando p
     ```sh
     jupyter notebook
     ```
+
+<hr>
+<a name='schema11'></a>
+
+## 11. Instalar AWS CLI usando Homebrew
+1. Instalación AWS CLI
+
+Ejecuta el siguiente comando en la Terminal:
+
+```bash
+brew install awscli
+```
+
+2. Verificar la instalación
+Para asegurarte de que la AWS CLI se haya instalado correctamente, verifica la versión instalada:
+
+```bash
+aws --version
+```
+3. Configurar AWS CLI
+Después de instalar la AWS CLI, necesitas configurarla con tus credenciales de AWS. Puedes hacerlo usando el comando aws configure. Ejecuta el siguiente comando en la Terminal:
+
+```bash
+aws configure
+```
+Se te pedirá que ingreses tu `AWS Access Key ID`, `AWS Secret Access Key`, `región` predeterminada y `formato de salida` predeterminado. Puedes obtener tus claves de acceso desde la consola de administración de AWS.
+
+```bash
+AWS Access Key ID [None]: YOUR_ACCESS_KEY
+AWS Secret Access Key [None]: YOUR_SECRET_KEY
+Default region name [None]: YOUR_PREFERRED_REGION
+Default output format [None]: json
+```
+
+4. Verificar la configuración
+Para asegurarte de que la configuración se haya realizado correctamente, puedes ejecutar un comando sencillo como listar tus buckets de S3:
+
+```bash
+aws s3 ls
+```
+Si todo está configurado correctamente, deberías ver una lista de tus buckets de S3 (si tienes alguno).
+
+5. Paso adicional: Actualizar la AWS CLI
+Si necesitas actualizar la AWS CLI en el futuro, puedes hacerlo con Homebrew usando el siguiente comando:
+
+```bash
+brew upgrade awscli
+```
+### Problemas Comunes y Soluciones
+- **Permisos insuficientes:** Si encuentras problemas de permisos durante la instalación de Homebrew o AWS CLI, puedes necesitar agregar sudo antes de los comandos para ejecutarlos como administrador.
+
+- **Problemas de red:** Si la instalación falla debido a problemas de red, asegúrate de que tu conexión a internet esté funcionando correctamente y vuelve a intentarlo.
