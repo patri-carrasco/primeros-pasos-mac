@@ -454,7 +454,7 @@ brew upgrade awscli
 - **Problemas de red:** Si la instalación falla debido a problemas de red, asegúrate de que tu conexión a internet esté funcionando correctamente y vuelve a intentarlo.
 
 <hr>
-<a name='schema11'></a>
+<a name='schema12'></a>
 
 ## 12. Instalar Terraform usando Homebrew
 Ejecuta el siguiente comando en la Terminal:
