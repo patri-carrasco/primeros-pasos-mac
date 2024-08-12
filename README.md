@@ -13,6 +13,7 @@
 10. [Instalar Jupyter Notebook en tu entorno virtual](#schema10)
 11. [Instalar AWS CLI usando Homebrew](#schema11)
 12. [Instalar Terraform usando Homebrew](#schema12)
+13. [Instalar OpenJDK con Homebrew](#schema13)
 
 <hr>
 <a name='schema0'></a>
@@ -469,3 +470,73 @@ Para asegurarte de que Terraform se haya instalado correctamente, verifica la ve
 ```bash
 terraform -v
 ```
+
+<hr>
+<a name='schema13'></a>
+
+
+
+## 13. Instalar OpenJDK con Homebrew
+1. Instalar OpenJDK
+    Para instalar OpenJDK, usa el siguiente comando:
+
+        ```bash
+        brew install openjdk
+        ```
+2. Configurar el Entorno
+    
+    - Después de la instalación, necesitas configurar el entorno para usar OpenJDK. Esto implica actualizar tu archivo` ~/.zshrc` (o ~/.bash_profile si usas bash) para incluir las rutas de OpenJDK en tu `PATH` y establecer la variable `JAVA_HOME`.
+
+    - Editar el Archivo ~/.zshrc
+        1. Abre el archivo ~/.zshrc en un editor de texto:
+
+            ```bash
+            code ~/.zshrc
+            ```
+        2. Añade o actualiza las siguientes líneas para configurar el PATH y JAVA_HOME:
+
+            ```bash
+            # Configura el PATH para incluir Homebrew, Visual Studio Code y OpenJDK
+            export PATH="/opt/homebrew/bin:/usr/local/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/opt/homebrew/opt/openjdk/bin:$PATH"
+
+            # Configura JAVA_HOME para que apunte a OpenJDK instalado con Homebrew
+            export JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+            ```
+            - La primera línea asegura que las rutas necesarias están incluidas en el `PATH`.
+            - La segunda línea establece `JAVA_HOME` para apuntar a la ubicación de OpenJDK.
+        3. Guarda y cierra el archivo (Ctrl+O para guardar y Ctrl+X para salir si usas nano).
+
+3. Recargar la Configuración del Shell.
+
+    Para aplicar los cambios realizados en ~/.zshrc, recarga la configuración:
+
+        ```bash
+        source ~/.zshrc
+        ```
+4. Verificar la Instalación
+
+    Verifica que Java esté correctamente instalado y configurado:
+
+    - Verificar la Versión de Java:
+
+        ```bash
+        java --version
+        ```
+        Deberías ver la versión de OpenJDK que instalaste.
+
+    - Verificar la Configuración de JAVA_HOME:
+
+        ```bash
+        echo $JAVA_HOME
+        ```
+        Debería mostrar /opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home.
+
+    - Verificar el PATH:
+
+        ```bash
+        echo $PATH
+        ```
+        Asegúrate de que las rutas incluyan las ubicaciones necesarias, como /opt/homebrew/opt/openjdk/bin.
+5. Reinicio de la Terminal:
+
+    Reinicia la terminal para aplicar completamente los cambios y asegurarte de que la configuración del entorno se haya cargado en todas las sesiones de terminal.
