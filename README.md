@@ -586,3 +586,48 @@ terraform -v
     - Docker Desktop se actualiza automáticamente, pero puedes verificar manualmente si hay actualizaciones disponibles en la aplicación Docker Desktop, yendo a Docker Desktop en la barra de menús y seleccionando Check for Updates.
 
 
+## 15. Instalar FWCrawler
+
+1. Visitar el [Tutorial](https://fscrawler.readthedocs.io/en/latest/user/tutorial.html)
+2. Descargar fscrawler del [sitio web](https://fscrawler.readthedocs.io/en/latest/installation.html#installation)
+    - Descargar la imagen con docker
+        ```bash
+        docker pull dadoonet/fscrawler
+        ```
+    - Este comando descarga la imagen de Docker de FSCrawler desde Docker Hub. Es el primer paso necesario para poder ejecutar FSCrawler en un contenedor.
+
+3. Ejecutar FSCrawler con un trabajo específico
+```bash
+docker run -it --rm \
+     -v ~/.fscrawler:/root/.fscrawler \
+     -v ~/tmp:/tmp/es:ro \
+     dadoonet/fscrawler fscrawler job_name
+```
+- Este comando ejecuta FSCrawler en un contenedor de Docker con las siguientes opciones:
+
+    - -it: Inicia el contenedor en modo interactivo.
+    - --rm: Elimina el contenedor automáticamente cuando se detiene.
+    - -v ~/.fscrawler:/root/.fscrawler: Monta el directorio de configuración local de FSCrawler (~/.fscrawler) en el contenedor. Aquí es donde se almacenarán las configuraciones de FSCrawler.
+    - -v ~/tmp:/tmp/es:ro: Monta la carpeta local ~/tmp en el contenedor como read-only en /tmp/es. Esta es la carpeta que FSCrawler rastreará.
+    - dadoonet/fscrawler: Especifica la imagen de Docker a usar.
+    - fscrawler job_name: Indica a FSCrawler que ejecute un trabajo específico (job_name).
+4. Ejecutar FSCrawler con configuraciones y archivos adicionales
+```bash
+docker run -it --rm \
+     -v ~/.fscrawler:/root/.fscrawler \
+     -v ~/tmp:/tmp/es:ro \
+     -v "$PWD/external:/usr/share/fscrawler/external" \
+     dadoonet/fscrawler fscrawler job_name
+```
+- Este comando es similar al anterior, pero incluye una opción adicional:
+
+    - -v "$PWD/external:/usr/share/fscrawler/external": Monta el directorio external desde tu directorio de trabajo actual en el contenedor. Este directorio puede contener configuraciones o archivos adicionales que FSCrawler necesita.
+5. Configuración del Trabajo (job_name)
+    - Cuando ejecutas FSCrawler por primera vez, se creará un archivo de configuración para el trabajo especificado (job_name). Podrás encontrar este archivo en `~/.fscrawler/job_name/_settings.yaml` en tu sistema. Puedes editar este archivo para ajustar la configuración de FSCrawler.
+    
+6. Ejecutar y Verificar
+- Una vez que todo esté configurado, FSCrawler debería empezar a procesar los archivos en la carpeta montada `~/tmp` y enviar los datos a tu instancia de Elasticsearch.
+
+    - Consideraciones
+        - Elasticsearch: Asegúrate de que tienes una instancia de Elasticsearch corriendo y accesible para que FSCrawler pueda enviar los datos. Si no tienes una instancia de Elasticsearch, puedes levantar una utilizando Docker también.
+        - Permisos: Si tienes problemas de permisos, asegúrate de que las carpetas que estás montando sean accesibles por el usuario bajo el cual Docker se está ejecutando.
