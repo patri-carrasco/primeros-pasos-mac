@@ -14,6 +14,7 @@
 11. [Instalar AWS CLI usando Homebrew](#schema11)
 12. [Instalar Terraform usando Homebrew](#schema12)
 13. [Instalar OpenJDK con Homebrew](#schema13)
+14. [Instalar Docker en macOS](#schema14)
 
 <hr>
 <a name='schema0'></a>
@@ -540,3 +541,48 @@ terraform -v
 5. Reinicio de la Terminal:
 
     Reinicia la terminal para aplicar completamente los cambios y asegurarte de que la configuración del entorno se haya cargado en todas las sesiones de terminal.
+
+<hr>
+<a name='schema14'></a>
+
+
+
+## 14. Instalar Docker en macOS:
+1. Verifica los Requisitos del Sistema:
+
+    - Asegúrate de que tu MacBook Air con chip M3 esté ejecutando macOS 14 o una versión compatible.
+2. Descargar Docker Desktop:
+    - Ve a la página oficial de Docker para descargar Docker Desktop para Mac: [Descargar Docker Desktop](https://docs.docker.com/desktop/install/mac-install/).
+    - En la página de descargas, selecciona la versión adecuada para "Apple Silicon" (M1, M2, M3, etc.), ya que el chip M3 es parte de esta arquitectura.
+
+3. Instalar Docker Desktop:
+
+    - Abre el archivo .dmg descargado.
+    - Arrastra el ícono de Docker a la carpeta "Aplicaciones" para instalarlo.
+
+4. Iniciar Docker Desktop:
+
+    - Abre la carpeta "Aplicaciones" y haz doble clic en el ícono de Docker para iniciarlo.
+    - Es posible que se te pida que aceptes algunos permisos de seguridad. Acepta estos permisos para que Docker pueda funcionar correctamente.
+
+5. Configurar Docker Desktop:
+
+    - La primera vez que abras Docker, es posible que se te pida que completes una serie de pasos de configuración inicial.
+    - Docker puede requerir que inicies sesión con tu cuenta Docker Hub. Si no tienes una cuenta, puedes crear una gratuitamente.
+6. Verificar la Instalación:
+
+    - Abre una Terminal en tu MacBook Air.
+    - Ejecuta el siguiente comando para asegurarte de que Docker esté funcionando correctamente:
+        ```bash
+        docker --version
+        ```
+    - También puedes probar con el siguiente comando para verificar que Docker está corriendo:
+        ```bash
+        docker run hello-world
+        ```
+    - Esto descargará una imagen de prueba y ejecutará un contenedor que imprimirá un mensaje de bienvenida si todo está funcionando correctamente.
+7. Actualizar Docker Desktop:
+
+    - Docker Desktop se actualiza automáticamente, pero puedes verificar manualmente si hay actualizaciones disponibles en la aplicación Docker Desktop, yendo a Docker Desktop en la barra de menús y seleccionando Check for Updates.
+
+
