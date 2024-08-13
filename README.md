@@ -15,6 +15,7 @@
 12. [Instalar Terraform usando Homebrew](#schema12)
 13. [Instalar OpenJDK con Homebrew](#schema13)
 14. [Instalar Docker en macOS](#schema14)
+15. [Instalar FSCrawler](#schema15)
 
 <hr>
 <a name='schema0'></a>
@@ -586,7 +587,10 @@ terraform -v
     - Docker Desktop se actualiza automáticamente, pero puedes verificar manualmente si hay actualizaciones disponibles en la aplicación Docker Desktop, yendo a Docker Desktop en la barra de menús y seleccionando Check for Updates.
 
 
-## 15. Instalar FWCrawler
+<hr>
+<a name='schema15'></a>
+
+## 15. Instalar FSCrawler
 
 1. Visitar el [Tutorial](https://fscrawler.readthedocs.io/en/latest/user/tutorial.html)
 2. Descargar fscrawler del [sitio web](https://fscrawler.readthedocs.io/en/latest/installation.html#installation)
