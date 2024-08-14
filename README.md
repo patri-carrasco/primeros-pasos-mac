@@ -16,6 +16,7 @@
 13. [Instalar OpenJDK con Homebrew](#schema13)
 14. [Instalar Docker en macOS](#schema14)
 15. [Instalar FSCrawler](#schema15)
+16. [Instalar Scala](#schena16)
 
 <hr>
 <a name='schema0'></a>
@@ -636,3 +637,41 @@ docker run -it --rm \
     - Consideraciones
         - Elasticsearch: Asegúrate de que tienes una instancia de Elasticsearch corriendo y accesible para que FSCrawler pueda enviar los datos. Si no tienes una instancia de Elasticsearch, puedes levantar una utilizando Docker también.
         - Permisos: Si tienes problemas de permisos, asegúrate de que las carpetas que estás montando sean accesibles por el usuario bajo el cual Docker se está ejecutando.
+
+<hr>
+<a name='schema15'></a>
+
+## 16. Instalar Scala
+
+1. Verifica que Java esté instalado correctamente ejecutando:
+
+    ```bash
+    java -version
+    ```
+    - Si no está instalado ir a: 13. [Instalar OpenJDK con Homebrew](#schema13)
+
+
+2. Instalar Scala.
+- En la Terminal, ejecuta el siguiente comando para instalar Scala:
+
+    ```bash
+    brew install scala
+    ```
+- Verifica la instalación ejecutando el siguiente comando:
+
+    ```bash
+    scala -version
+    ```
+3. Instalar sbt (opcional, pero recomendado)
+- `sbt` es la herramienta de construcción y administración de proyectos de Scala.
+
+- Para instalar sbt, ejecuta el siguiente comando:
+
+    ```bash
+    brew install sbt
+    ```
+- Verifica la instalación con:
+
+    ```bash
+    sbt sbtVersion
+    ```
