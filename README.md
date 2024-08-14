@@ -298,6 +298,7 @@
 - Iniciar aplicaciones y buscar archivos: [Alfred](https://www.alfredapp.com/)
 
 - Control de rato Logitech: [MX Master](https://www.logitech.com/es-es/software/logi-options-plus.html)
+- Manejo y control de la bataría mientras está el cargador enchufado: [AlDente](https://apphousekitchen.com/)
 
 
 <hr>
