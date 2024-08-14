@@ -16,7 +16,7 @@
 13. [Instalar OpenJDK con Homebrew](#schema13)
 14. [Instalar Docker en macOS](#schema14)
 15. [Instalar FSCrawler](#schema15)
-16. [Instalar Scala](#schena16)
+16. [Instalar Scala](#schema16)
 
 <hr>
 <a name='schema0'></a>
