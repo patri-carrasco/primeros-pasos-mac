@@ -639,7 +639,7 @@ docker run -it --rm \
         - Permisos: Si tienes problemas de permisos, asegúrate de que las carpetas que estás montando sean accesibles por el usuario bajo el cual Docker se está ejecutando.
 
 <hr>
-<a name='schema15'></a>
+<a name='schema16'></a>
 
 ## 16. Instalar Scala
 
