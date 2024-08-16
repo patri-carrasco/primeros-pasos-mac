@@ -301,6 +301,7 @@
 - Control de rato Logitech: [MX Master](https://www.logitech.com/es-es/software/logi-options-plus.html)
 - Manejo y control de la bataría mientras está el cargador enchufado: [AlDente](https://apphousekitchen.com/)
 
+- Configuración de la terminal [Oh My Zsh](https://ohmyz.sh/)
 
 <hr>
 <a name='schema8'></a>
