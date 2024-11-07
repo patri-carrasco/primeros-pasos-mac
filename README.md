@@ -17,6 +17,8 @@
 14. [Instalar Docker en macOS](#schema14)
 15. [Instalar FSCrawler](#schema15)
 16. [Instalar Scala](#schema16)
+17. [Instalar Pyspark](#schema17)
+
 
 <hr>
 <a name='schema0'></a>
@@ -676,3 +678,32 @@ docker run -it --rm \
     ```bash
     sbt sbtVersion
     ```
+
+
+<hr>
+<a name='schema17'></a>
+
+## 17. Instalar Pyspark
+
+1. Instalar Java Development Kit (JDK), spark run on java 8, 11, or 17
+    - https://www.oracle.com/java/technologies/downloads/#jdk21-mac
+
+2. Instalar Apache Spark
+    - https://spark.apache.org/downloads.html
+
+3. Renombar la descarga anterior a por ejemplo `spark` y moverla a alguna carpeta por ejemplo `Apps` para saber donde esta Apache Spark.
+Ahora toca de configurar  las variables de entorno para que PySpark pueda encontrar tu instalación de Spark.
+- Abre tu archivo de configuración de shell (como `.zshrc` o .bash_profile) y añade estas líneas al final del archivo:
+```bash
+
+# Configuración para PySpark
+export SPARK_HOME="/Users/patricia/Apps/spark"  
+export PATH="$SPARK_HOME/bin:$PATH"
+
+# Configuración para usar Python correcto con PySpark
+export PYSPARK_PYTHON="/opt/homebrew/bin/python3"  
+# Configuración para Java
+export JAVA_HOME=$(/usr/libexec/java_home -v 21)
+export PATH=$JAVA_HOME/bin:$PATH
+
+```
