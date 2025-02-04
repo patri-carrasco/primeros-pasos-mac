@@ -20,6 +20,7 @@
 16. [Instalar FSCrawler](#schema16)
 17. [Instalar Scala](#schema17)
 18. [Instalar Pyspark](#schema18)
+19. [Notas](#schemanotas)
 
 
 <hr>
@@ -553,7 +554,7 @@ Con esta instalación se instala la última versión de java, si la quieres para
 <a name='schema14'></a>
 
 ## 14 Guía para Instalar y Configurar IntelliJ IDEA (para Scala y Spark)
-Yo ya tengo instalado el java 21, van a convivir las dos version, si solo quieres la version 11 salta el paso anterio.
+Yo ya tengo instalado el java 21, van a convivir las dos version, si solo quieres la version 11 salta el paso anterior, [13](#schema13).
 1. Instalar IntelliJ IDEA
     - Ve a [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/download/download-thanks.html?platform=macM1&code=IIC)
     - Descarga la versión Community (es gratuita y suficiente para Scala y Spark).
@@ -797,3 +798,12 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 export PATH=$JAVA_HOME/bin:$PATH
 
 ```
+
+
+
+
+<hr>
+<a name='schemanotas'></a>
+
+# Notas 
+A tener en cuenta lo cambios necesarios para el archivo `.~/.zshrc` que los path que yo pongo son en mi configuración a lo mejor debes hacer algún cambio.
