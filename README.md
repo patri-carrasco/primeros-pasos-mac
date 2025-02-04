@@ -14,10 +14,12 @@
 11. [Instalar AWS CLI usando Homebrew](#schema11)
 12. [Instalar Terraform usando Homebrew](#schema12)
 13. [Instalar OpenJDK con Homebrew](#schema13)
-14. [Instalar Docker en macOS](#schema14)
-15. [Instalar FSCrawler](#schema15)
-16. [Instalar Scala](#schema16)
-17. [Instalar Pyspark](#schema17)
+14. [Guía para Instalar y Configurar IntelliJ IDEA en tu Mac Air M3 (para Scala y Spark)
+](#schema14)
+15. [Instalar Docker en macOS](#schema15)
+16. [Instalar FSCrawler](#schema16)
+17. [Instalar Scala](#schema17)
+18. [Instalar Pyspark](#schema18)
 
 
 <hr>
@@ -481,8 +483,6 @@ terraform -v
 <hr>
 <a name='schema13'></a>
 
-
-
 ## 13. Instalar OpenJDK con Homebrew
 1. Instalar OpenJDK
     Para instalar OpenJDK, usa el siguiente comando:
@@ -547,6 +547,95 @@ terraform -v
 5. Reinicio de la Terminal:
 
     Reinicia la terminal para aplicar completamente los cambios y asegurarte de que la configuración del entorno se haya cargado en todas las sesiones de terminal.
+
+<hr>
+<a name='schema14'></a>
+
+## 14 Guía para Instalar y Configurar IntelliJ IDEA en tu Mac Air M3 (para Scala y Spark)
+
+1. Instalar IntelliJ IDEA
+    - Ve a [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/download/download-thanks.html?platform=macM1&code=IIC)
+    - Descarga la versión Community (es gratuita y suficiente para Scala y Spark).
+    - Abre el archivo .dmg descargado y arrastra IntelliJ IDEA a la carpeta de Aplicaciones.
+    - Ejecuta IntelliJ IDEA y acepta los términos de uso.
+
+
+2. Instalar el Plugin de Scala
+    - En IntelliJ IDEA, ve a "Preferences" (Cmd + ,).
+    - En el menú lateral, selecciona "Plugins".
+    - Busca "Scala" en la barra de búsqueda.
+    - Haz clic en "Install" y reinicia IntelliJ IDEA si lo solicita.
+
+3. Instalar JDK 11 usando Homebrew:
+    1. Abre la terminal de tu Mac.
+    2. Ejecuta:
+    ```bash
+    brew install openjdk@11
+    ``` 
+    3. Verificar la instalación: Una vez completada la instalación, verifica la ubicación de Java 11:
+
+    ```bash
+        brew --prefix openjdk@11
+    ```
+    Esto debería devolver una ruta similar a:
+
+    ```bash
+    /opt/homebrew/opt/openjdk@11
+    ```
+    4. Crear enlaces simbólicos para que el sistema reconozca Java 11:
+
+    ```bash
+    sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+    ```
+    5. Agregar Java 11 al PATH:
+    ```bash
+    # Configuración para Java (Java 21 y Java 11)
+    export JAVA_HOME_21=$(/usr/libexec/java_home -v 21)
+    export JAVA_HOME_11="/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
+
+    # Seleccionar la versión de Java (por defecto Java 21)
+    export JAVA_HOME=$JAVA_HOME_21
+    export PATH="$JAVA_HOME/bin:$PATH"
+    ```
+    6. Actualizar la configuración:
+
+    ```bash
+    source ~/.zshrc
+    ```
+
+    7. Verificar la instalación:
+
+    ```bash
+    java -version
+    ```
+    8. Alternar Entre Java 21 y Java 11
+    Para usar Java 11 temporalmente en una sesión:
+
+    ```bash
+    export JAVA_HOME=$JAVA_HOME_11
+    export PATH="$JAVA_HOME/bin:$PATH"
+    java -version
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <hr>
 <a name='schema14'></a>
