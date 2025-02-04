@@ -485,7 +485,7 @@ terraform -v
 <a name='schema13'></a>
 
 ## 13. Instalar OpenJDK con Homebrew
-Con esta instalación se instala la última versión de java, si la quieres para trabjar con scala mejor es la versión 11, salta es capítulo y ve al siguiente punto, [14](#schema14). Teniendo encuenta lo cambios necesarios para el archivo `.~/.zshrc` que los path que yo pongo son en mi configuración a lo mejor debes hacer algún cambio.
+Con esta instalación se instala la última versión de java, si la quieres para trabjar con scala mejor es la versión 11, salta es capítulo y ve al siguiente punto, [14](#schema14). 
 1. Instalar OpenJDK
     Para instalar OpenJDK, usa el siguiente comando:
 
