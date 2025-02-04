@@ -484,6 +484,7 @@ terraform -v
 <a name='schema13'></a>
 
 ## 13. Instalar OpenJDK con Homebrew
+Con esta instalación se instala la última versión de java, si la quieres para trabjar con scala mejor es la versión 11, salta es capítulo y ve al siguiente punto, [14](#schema14). Teniendo encuenta lo cambios necesarios para el archivo `.~/.zshrc` que los path que yo pongo son en mi configuración a lo mejor debes hacer algún cambio.
 1. Instalar OpenJDK
     Para instalar OpenJDK, usa el siguiente comando:
 
@@ -551,8 +552,8 @@ terraform -v
 <hr>
 <a name='schema14'></a>
 
-## 14 Guía para Instalar y Configurar IntelliJ IDEA en tu Mac Air M3 (para Scala y Spark)
-
+## 14 Guía para Instalar y Configurar IntelliJ IDEA (para Scala y Spark)
+Yo ya tengo instalado el java 21, van a convivir las dos version, si solo quieres la version 11 salta el paso anterio.
 1. Instalar IntelliJ IDEA
     - Ve a [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/download/download-thanks.html?platform=macM1&code=IIC)
     - Descarga la versión Community (es gratuita y suficiente para Scala y Spark).
