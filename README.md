@@ -618,16 +618,72 @@ Yo ya tengo instalado el java 21, van a convivir las dos version, si solo quiere
     export PATH="$JAVA_HOME/bin:$PATH"
     java -version
     ```
+4. Configurar Java 11 en IntelliJ IDEA
+- Abre IntelliJ IDEA:
+    - Abre IntelliJ IDEA en tu Mac.
+- Ve a Preferencias:
+    - En el menú de IntelliJ IDEA, ve a "IntelliJ IDEA" → "Preferences" (Cmd + ,).
+- Configura el JDK:
+    - En el panel izquierdo, navega a:
+    `Build, Execution, Deployment → Build Tools → SBT`
+- En la sección JDK, haz clic en el menú desplegable y selecciona:
+    - Si Java 11 ya aparece, selecciona Java 11.
+    - Si Java 11 no aparece, haz clic en "Add JDK", navega a:
+    `/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home`
+    Luego haz clic en "Open" para agregarlo.
+- Haz clic en "Apply" y luego en "OK" para guardar los cambios.
 
+5. Crear un Proyecto Nuevo en IntelliJ IDEA y Configurarlo para Java 11:
 
+    1. Crear un Nuevo Proyecto en IntelliJ IDEA:
+        - Abre IntelliJ IDEA y selecciona "New Project" desde la pantalla principal.
+        - En el asistente de creación de proyectos, selecciona "Scala" como el tipo de proyecto si vas a trabajar con Spark (si no ves "Scala", asegúrate de tener el plugin de Scala instalado).
+        - En el siguiente paso, selecciona la opción "JDK 11" si ya lo has configurado, o si no, selecciona el JDK correcto. Si no aparece, puedes agregarlo manualmente como lo hicimos antes. Para Java 11, busca la ruta de instalación de OpenJDK:
+        `/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home`
 
+        - Elige "SBT" como herramienta de construcción si quieres trabajar con SBT (Scala Build Tool), o si prefieres Maven o Gradle, selecciona la opción adecuada.
 
+    2. Configurar el SDK de Java 11 para el Proyecto:
+    Si en el paso anterior no seleccionaste el JDK correcto (Java 11), puedes hacerlo ahora en las configuraciones del proyecto:
+    - Haz clic derecho en el nombre del proyecto y selecciona "Open Module Settings" (F4).
+    - En la pestaña "Project", en la opción "Project SDK", selecciona "Java 11".
+    - También puedes configurar el "Project language level" a "11 - Local variable syntax for lambda parameters".
+    3. Agregar Dependencias de Spark en el Proyecto:
+    - Si estás trabajando con Spark en un proyecto Scala, necesitarás agregar la dependencia de Spark. Si estás usando SBT, agrega lo siguiente a tu archivo build.sbt:
+    ```scala
+    name := "TestSparkJava11"
 
+    version := "0.1"
 
+    scalaVersion := "2.12.10" // o cualquier versión de Scala compatible
 
+    libraryDependencies += "org.apache.spark" %% "spark-core" % "3.4.0"
+    libraryDependencies += "org.apache.spark" %% "spark-sql" % "3.4.0"
+    ```
+    4. Escribir el Código de Prueba:
+    - Una vez que el proyecto esté configurado, puedes escribir un archivo para probar que todo esté funcionando correctamente. Por ejemplo, crea un archivo de Scala con el siguiente código:
 
+    ```scala
+        import org.apache.spark.sql.SparkSession
 
+    object TestSparkJava11 {
+    def main(args: Array[String]): Unit = {
+        val spark = SparkSession.builder()
+        .appName("Test Java 11 with Spark")
+        .master("local[*]")
+        .getOrCreate()
 
+        val data = Seq(("Scala", 2.12), ("Spark", 3.4), ("Java", 11))
+        val df = spark.createDataFrame(data).toDF("Tecnología", "Versión")
+
+        df.show()
+
+        spark.stop()
+    }
+    }
+    ```
+    5. Ejecutar el Proyecto:
+        - Haz clic derecho en el archivo de prueba y selecciona "Run 'TestSparkJava11'".
 
 
 
