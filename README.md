@@ -20,7 +20,8 @@
 16. [Instalar FSCrawler](#schema16)
 17. [Instalar Scala](#schema17)
 18. [Instalar Pyspark](#schema18)
-19. [Notas](#schemanotas)
+19. [Instalar PostgreSQL](#schema19)
+21. [Notas](#schemanotas)
 
 
 <hr>
@@ -696,11 +697,11 @@ Yo ya tengo instalado el java 21, van a convivir las dos version, si solo quiere
 
 
 <hr>
-<a name='schema14'></a>
+<a name='schema15'></a>
 
 
 
-## 14. Instalar Docker en macOS:
+## 15. Instalar Docker en macOS:
 1. Verifica los Requisitos del Sistema:
 
     - Asegúrate de que tu MacBook Air con chip M3 esté ejecutando macOS 14 o una versión compatible.
@@ -740,9 +741,9 @@ Yo ya tengo instalado el java 21, van a convivir las dos version, si solo quiere
 
 
 <hr>
-<a name='schema15'></a>
+<a name='schema16'></a>
 
-## 15. Instalar FSCrawler
+## 16. Instalar FSCrawler
 
 1. Visitar el [Tutorial](https://fscrawler.readthedocs.io/en/latest/user/tutorial.html)
 2. Descargar fscrawler del [sitio web](https://fscrawler.readthedocs.io/en/latest/installation.html#installation)
@@ -789,9 +790,9 @@ docker run -it --rm \
         - Permisos: Si tienes problemas de permisos, asegúrate de que las carpetas que estás montando sean accesibles por el usuario bajo el cual Docker se está ejecutando.
 
 <hr>
-<a name='schema16'></a>
+<a name='schema167></a>
 
-## 16. Instalar Scala
+## 17. Instalar Scala
 
 1. Verifica que Java esté instalado correctamente ejecutando:
 
@@ -828,9 +829,9 @@ docker run -it --rm \
 
 
 <hr>
-<a name='schema17'></a>
+<a name='schema18'></a>
 
-## 17. Instalar Pyspark
+## 18. Instalar Pyspark
 
 1. Instalar Java Development Kit (JDK), spark run on java 8, 11, or 17
     - https://www.oracle.com/java/technologies/downloads/#jdk21-mac
@@ -854,7 +855,95 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 21)
 export PATH=$JAVA_HOME/bin:$PATH
 
 ```
+<hr>
+<a name='schema19'></a>
 
+## 19. Instalar PostgreSQL
+
+1. Instala PostgreSQL:
+
+```bash
+brew install postgresql
+```
+2. Una vez instalado, inicia el servicio:
+
+```bash
+brew services start postgresql
+```
+3. Verifica que PostgreSQL está instalado correctamente:
+
+```bash
+psql --version
+```
+4. (Opcional, pero útil) Crea un usuario con tu nombre de macOS si no existe:
+
+```bash
+createuser -s $(whoami)
+```
+5. Conéctate a PostgreSQL:
+
+```bash
+psql postgres
+```
+<hr>
+<a name='schema20'></a>
+
+## 20. Cómo usar DBeaver con PostgreSQL
+
+1. Descargar e instalar DBeaver
+    1. Ve a la web oficial de DBeaver:
+        https://dbeaver.io/download/
+
+    2. Haz clic en el botón de descarga para macOS (dmg installer).
+
+    3. Abre el archivo .dmg descargado y arrastra DBeaver a tu carpeta de Aplicaciones como con cualquier app de Mac.
+
+    4. Abre DBeaver. Si te pide permiso porque es de un desarrollador no identificado:
+
+        - Ve a Preferencias del sistema > Seguridad y privacidad > General.
+
+        - Haz clic en "Abrir de todos modos".
+
+2. Crear una conexión a PostgreSQL
+    1. En la pantalla principal de DBeaver, haz clic en:
+
+        - "Nueva conexión" o el ícono de plug ➕ en la barra superior.
+
+    2. Aparecerá una ventana con muchas bases de datos.
+
+        - Elige PostgreSQL (puedes buscarlo en la barra superior).
+
+    3. Haz clic en "Siguiente".
+
+3. Configurar los datos de conexión
+    1. Aquí introduces los detalles para conectarte a tu servidor PostgreSQL local:
+
+
+        - Host	-> localhost
+        - Puerto ->	5432
+        - Base de datos ->	dbt_tutorial (o postgres si aún no la creaste)
+        - Usuario ->	tu usuario de macOS (por ejemplo, patricia)
+            - ¿No sabes cuál es tu usuario?
+                Puedes ver tu usuario actual ejecutando en la terminal:
+
+                ```bash
+                whoami
+                ```
+        - Contraseña	déjalo en blanco si no configuraste una, o escribe la que hayas definido
+
+
+
+5. ¿Y si aún no has creado la base de datos dbt_tutorial?
+    1. Puedes hacerlo desde el cliente psql en terminal:
+
+    ```bash
+    createdb dbt_tutorial
+    ```
+    2. O también desde DBeaver:
+
+        - Conéctate a postgres.
+
+        - Haz clic derecho > "Create new database".
 
 
 
