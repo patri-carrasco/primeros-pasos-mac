@@ -21,7 +21,9 @@
 17. [Instalar Scala](#schema17)
 18. [Instalar Pyspark](#schema18)
 19. [Instalar PostgreSQL](#schema19)
-21. [Notas](#schemanotas)
+20. [Cómo usar DBeaver con PostgreSQL](#schema20)
+21. [Instalación de dbt](#schema21)
+22. [Notas](#schemanotas)
 
 
 <hr>
@@ -944,8 +946,33 @@ psql postgres
         - Conéctate a postgres.
 
         - Haz clic derecho > "Create new database".
+<hr>
+<a name='schema21'></a>
+
+21. [Instalación de dbt](#schema21)
 
 
+<hr>
+<a name='schema1'></a>
+
+## 1. Instalación de dbt
+1. Crear un entorno virtual en la carpeta actual
+```bash
+python3 -m venv venv-dbt
+```
+2. Activa el entorno virtual
+```bash
+source venv-dbt/bin/activate
+```
+3. Instala dbt-core y el adaptador de tu base de datos (ej: PostgreSQL):
+```bash
+pip install dbt-core dbt-postgres
+```
+4. Verifica la instalación:
+
+```bash
+dbt --version
+```
 
 <hr>
 <a name='schemanotas'></a>
